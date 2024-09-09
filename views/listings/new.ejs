@@ -1,0 +1,79 @@
+<% layout ("/layouts/boilerplate")%>
+<div class="row mt-3">
+    <div class="col-8 offset-2 ">
+        <br><br>
+    <h3>Create a New Listing</h3>
+    <form method="POST" action="/listings" novalidate class="needs-validation" enctype="multipart/form-data">
+        <div class="mb-3">
+            <label for="title" class="form-lable "> Title</label>
+            <input 
+            class="form-control"
+             type="text"
+             placeholder="Add a catchy title" 
+             name="listing[title]" 
+             required   
+             />
+             <div class="valid-feedback">Title looks good </div>
+        </div>
+       
+        <div class="mb-3">
+            <label for="description" class="form-lable "> Description</label>
+            <textarea 
+            type="text"  
+            name="listing[description]" 
+            class="form-control"
+            required 
+             ></textarea>
+             <div class="invalid-feedback">Please enter a short description</div>
+        </div>
+<!-- to upload image -->
+        <div class="mb-3">
+            <label for="image" class="form-lable ">Upload Listing Image </label>
+            <input 
+            class="form-control"
+            type="file" 
+            name="listing[image]" 
+            required
+            > <!--yha pe hmne yeh listing[image] object bna diya hai jisse app.js me jayada nhi likhna pdega ar yeh sare java script ke key value pair ki trh bn jayege-->
+</div>
+
+        <div class="row">
+            <div class="mb-3 col-md-4">
+                <label for="price" class="form-lable "> Price </label>
+                <input  class="form-control" 
+                 placeholder="enter price" 
+                 name="listing[price]"
+                 required 
+                  >
+                  <div class="invalid-feedback">Please enter a valid Price</div>
+             </div>
+
+             <div class="mb-3 col-md-8">
+                <label for="country" class="form-lable " > Country</label>
+
+                <input 
+                class="form-control" 
+                type="text" 
+                placeholder="enter country" 
+                name="listing[country]" 
+                required >
+                <div class="invalid-feedback">Please enter a valid Country</div>
+            </div>
+        </div>
+
+     
+
+        <div class="mb-3">
+            <label for="location" class="from-lable "required >Location</label>
+            <input 
+            class="form-control" 
+            type="text" 
+            placeholder="enter location "
+             name="listing[location]" 
+             required />
+             <div class="invalid-feedback">Please enter a valid Location</div>
+        </div>
+        <button class="btn btn-dark add-btn mt-3">add</button>
+    </form>
+</div>
+</div>
